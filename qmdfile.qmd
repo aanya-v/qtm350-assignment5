@@ -1,0 +1,101 @@
+## Assignment 5
+---
+title: "Assignment 5 qmd file"
+author: "Aanya Vusirikala"
+date: "2/25/2025"
+output:
+    html:
+        some_feature: true
+    pdf:
+        some_feature: false
+bibliography: references.bib
+
+---
+
+
+```{python}
+
+import pandas as pd
+df = pd.read_csv('wdi.csv')
+df
+
+# Summary statistics
+
+
+key_statistics = df[['inflation_rate', 'country', 'exports_gdp_share', 'gdp_per_capita']]
+
+summary = key_statistics.describe()
+print(summary)
+print(key_statistics.head())
+
+
+```
+
+##Summary of Findings
+I chose to look at the three indicators inflation rate, gdp_per_capita, and exports_gdp_share by country. The mean inflation rate is 12.5, the mean gdp per capita is 20,345 and then mean exports gdp share is 46.2. The countries with the 2 highest exports gdp share are Luxmeborg and Hong Kong. The countries with the 2 highest inflation rates are Lebanon and Sudan. And the countries with the higest gdp per capita are Monaco and Liechtenstein.
+
+*Data Source: [World Development Indicators](https://github.com/danilofreire/qtm350/blob/main/assignments/wdi.csv)*
+
+
+## Bar Chart: GDP per Capita by Country {#fig:gdp-bar-chart}  
+
+```{python, echo = false}
+
+import matplotlib.pyplot as plt
+plt.figure(figsize=(6,4))
+plt.bar(df['country'], df['gdp_per_capita'], color='green')
+plt.xlabel("Country")
+plt.ylabel("GDP per Capita")
+plt.title("Bar Chart of GDP per Capita by Country")
+plt.xticks(rotation=45)  # Tilt the x-axis labels
+plt.show()
+
+```
+
+## Scatter Plots: Inflation Rate vs. GDP per Capital, Inflation Rate vs export GDP share, GDP per capital vs export GDP share {#fig:scatters}  
+
+```{python, echo = false}
+plt.figure(figsize=(8,5))
+plt.scatter(df['inflation_rate'], df['gdp_per_capita'], color='blue', alpha=0.7)
+plt.xlabel("Inflation Rate (%)")
+plt.ylabel("GDP per Capita")
+plt.title("Scatter Plot of Inflation Rate vs. GDP per Capita")
+plt.show()
+
+
+plt.figure(figsize=(8,5))
+plt.scatter(df['inflation_rate'], df['exports_gdp_share'], color='blue', alpha=0.7)
+plt.xlabel("Inflation Rate (%)")
+plt.ylabel("Exports GDP Share")
+plt.title("Scatter Plot of Inflation Rate vs. Exports GDP Share")
+plt.show()
+
+
+
+plt.figure(figsize=(8,5))
+plt.scatter(df['gdp_per_capita'], df['exports_gdp_share'], color='blue', alpha=0.7)
+plt.xlabel("Inflation Rate (%)")
+plt.ylabel("Exports GDP Share")
+plt.title("Scatter Plot of GDP per capita vs. Exports GDP Share")
+plt.show()
+
+```
+
+## Summary Statistics Table {#tab:summary-statistics}
+| Statistic       | Inflation Rate | Exports GDP Share | GDP Per Capita |
+|---------------|----------------|-------------------|---------------|
+| Count         | 169            | 169               | 203           |
+| Mean          | 12.49          | 46.17             | 20345.71      |
+| Std Dev       | 19.68          | 34.00             | 31308.94      |
+| Min           | -6.69          | 1.57              | 259.03        |
+| 25%           | 5.52           | 24.53             | 2570.56       |
+| 50% (Median)  | 7.97           | 40.22             | 7587.59       |
+| 75%           | 11.67          | 55.46             | 25982.63      |
+| Max           | 171.21         | 211.28            | 240862.18     |
+
+
+
+##Relevant Sources
+@james2012gdp
+@DAO2024103658
+

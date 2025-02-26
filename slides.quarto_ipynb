@@ -1,0 +1,100 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"WDI Slides\"\n",
+        "author: \"Aanya Vusirikala\"\n",
+        "date: \"2/25/2025\"\n",
+        "format: \n",
+        "  revealjs:\n",
+        "    theme: solarized\n",
+        "    transition: fade\n",
+        "---\n",
+        "\n",
+        "\n",
+        "# Introduction\n",
+        "\n",
+        "- Overview of world development indicators\n",
+        "- *Data Source: [World Development Indicators](https://github.com/danilofreire/qtm350/blob/main/assignments/wdi.csv)*\n",
+        "\n",
+        "\n",
+        "---\n",
+        "\n",
+        "# Summary Statistics\n",
+        "\n",
+        ": **Summary statistics of key economic indicators**\n",
+        "\n",
+        "| Statistic       | Inflation Rate | Exports GDP Share | GDP Per Capita |\n",
+        "|---------------|----------------|-------------------|---------------|\n",
+        "| Count         | 169            | 169               | 203           |\n",
+        "| Mean          | 12.49          | 46.17             | 20345.71      |\n",
+        "| Std Dev       | 19.68          | 34.00             | 31308.94      |\n",
+        "| Min           | -6.69          | 1.57              | 259.03        |\n",
+        "| Max           | 171.21         | 211.28            | 240862.18     |\n",
+        "\n",
+        "---\n",
+        "\n",
+        "## SLAY\n",
+        "\n",
+        "![](fig:gdp-bar-chart)\n",
+        "\n",
+        "---\n",
+        "\n",
+        "# Inflation vs. GDP Per Capita\n"
+      ],
+      "id": "19e5653f"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "plt.figure(figsize=(8,5))\n",
+        "plt.scatter(df['inflation_rate'], df['gdp_per_capita'], color='blue', alpha=0.7)\n",
+        "plt.xlabel(\"Inflation Rate (%)\")\n",
+        "plt.ylabel(\"GDP per Capita\")\n",
+        "plt.title(\"Scatter Plot of Inflation Rate vs. GDP per Capita\")\n",
+        "plt.show()"
+      ],
+      "id": "49f72292",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "**Figure:** A scatter plot showing the relationship between inflation rate and GDP per capita.\n",
+        "\n",
+        "---\n",
+        "\n",
+        "# Analysis & Insights\n",
+        "\n",
+        "- **GDP per capita** varies significantly across countries (See Figure 1)\n",
+        "- **Inflation rates** impact GDP differently based on economic conditions (See Figure 2)\n",
+        "- Export-driven economies exhibit diverse **economic growth trends**\n",
+        "\n",
+        "---\n",
+        "\n",
+        "# Conclusion\n",
+        "\n",
+        "- Key economic indicators provide insights into global economic health\n",
+        "- Further analysis can explore deeper relationships between variables\n",
+        "- Data-driven policymaking is essential for sustainable economic growth"
+      ],
+      "id": "cd73d31e"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/opt/anaconda3/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

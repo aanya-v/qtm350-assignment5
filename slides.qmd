@@ -1,0 +1,57 @@
+---
+title: "WDI Slides"
+author: "Aanya Vusirikala"
+date: "2/25/2025"
+format: 
+  revealjs:
+    theme: solarized
+    transition: fade
+---
+
+# Introduction
+
+- Overview of world development indicators
+- *Data Source: [World Development Indicators](https://github.com/danilofreire/qtm350/blob/main/assignments/wdi.csv)*
+
+
+---
+
+# Summary Statistics
+
+: **Summary statistics of key economic indicators**
+
+| Statistic       | Inflation Rate | Exports GDP Share | GDP Per Capita |
+|---------------|----------------|-------------------|---------------|
+| Count         | 169            | 169               | 203           |
+| Mean          | 12.49          | 46.17             | 20345.71      |
+| Std Dev       | 19.68          | 34.00             | 31308.94      |
+| Min           | -6.69          | 1.57              | 259.03        |
+| Max           | 171.21         | 211.28            | 240862.18     |
+
+---
+
+## GDP per capita by country
+
+**Figure:** A bar plot showing the GDP per capita by country
+
+![](slides_files/figure-revealjs/cell-2-output-1.png)
+
+
+
+---
+
+# Inflation vs. GDP Per Capita
+
+**Figure:** A scatter plot showing the relationship between inflation rate and GDP per capita.
+
+![](slides_files/figure-revealjs/cell-3-output-1.png)
+
+
+---
+
+
+# Conclusion
+
+- Some key indicator of world development are inflation rate and GDP per capita
+- Further analysis can explore deeper relationships between variables
+- Data-driven policymaking is important for economic growth!
