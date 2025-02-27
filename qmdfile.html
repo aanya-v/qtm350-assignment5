@@ -131,7 +131,7 @@ div.csl-indent {
 
 <section id="assignment-5" class="level2">
 <h2 class="anchored" data-anchor-id="assignment-5">Assignment 5</h2>
-<div id="2a901812" class="cell" data-execution_count="1">
+<div id="68c80d41" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'wdi.csv'</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df</span>
@@ -162,20 +162,15 @@ max        171.205491         211.278206   240862.182448
 4             NaN         Andorra                NaN    42350.697069</code></pre>
 </div>
 </div>
-<p>##Summary of Findings <span class="citation" data-cites="james2012gdp">James, Gubbins, and Murray (<a href="#ref-james2012gdp" role="doc-biblioref">2012</a>)</span> I chose to look at the three indicators inflation rate, gdp_per_capita, and exports_gdp_share by country. The mean inflation rate is 12.5, the mean gdp per capita is 20,345 and then mean exports gdp share is 46.2. The countries with the 2 highest exports gdp share are Luxmeborg and Hong Kong. The countries with the 2 highest inflation rates are Lebanon and Sudan. And the countries with the higest gdp per capita are Monaco and Liechtenstein.</p>
+</section>
+<section id="summary-of-findings" class="level2">
+<h2 class="anchored" data-anchor-id="summary-of-findings">Summary of Findings</h2>
+<p>I chose to look at the three indicators inflation rate, gdp_per_capita, and exports_gdp_share by country. The mean inflation rate is 12.5, the mean gdp per capita is 20,345 and then mean exports gdp share is 46.2. The countries with the 2 highest exports gdp share are Luxmeborg and Hong Kong. The countries with the 2 highest inflation rates are Lebanon and Sudan. And the countries with the higest gdp per capita are Monaco and Liechtenstein.</p>
 <p><em>Data Source: <a href="https://github.com/danilofreire/qtm350/blob/main/assignments/wdi.csv">World Development Indicators</a></em></p>
 </section>
 <section id="fig:gdp-bar-chart" class="level2">
 <h2 class="anchored" data-anchor-id="fig:gdp-bar-chart">Bar Chart: GDP per Capita by Country</h2>
-<div id="95342179" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">4</span>))</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plt.bar(df[<span class="st">'country'</span>], df[<span class="st">'gdp_per_capita'</span>], color<span class="op">=</span><span class="st">'green'</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Country"</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"GDP per Capita"</span>)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Bar Chart of GDP per Capita by Country"</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>)  <span class="co"># Tilt the x-axis labels</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="bcb6ffce" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -187,30 +182,7 @@ max        171.205491         211.278206   240862.182448
 </section>
 <section id="fig:scatters" class="level2">
 <h2 class="anchored" data-anchor-id="fig:scatters">Scatter Plots: Inflation Rate vs.&nbsp;GDP per Capital, Inflation Rate vs export GDP share, GDP per capital vs export GDP share</h2>
-<div id="da6c0a21" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">5</span>))</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>plt.scatter(df[<span class="st">'inflation_rate'</span>], df[<span class="st">'gdp_per_capita'</span>], color<span class="op">=</span><span class="st">'blue'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Inflation Rate (%)"</span>)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"GDP per Capita"</span>)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Scatter Plot of Inflation Rate vs. GDP per Capita"</span>)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">5</span>))</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>plt.scatter(df[<span class="st">'inflation_rate'</span>], df[<span class="st">'exports_gdp_share'</span>], color<span class="op">=</span><span class="st">'blue'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Inflation Rate (%)"</span>)</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Exports GDP Share"</span>)</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Scatter Plot of Inflation Rate vs. Exports GDP Share"</span>)</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">5</span>))</span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>plt.scatter(df[<span class="st">'gdp_per_capita'</span>], df[<span class="st">'exports_gdp_share'</span>], color<span class="op">=</span><span class="st">'blue'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Inflation Rate (%)"</span>)</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Exports GDP Share"</span>)</span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Scatter Plot of GDP per capita vs. Exports GDP Share"</span>)</span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="bedfd6e4" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -302,10 +274,17 @@ max        171.205491         211.278206   240862.182448
 </tr>
 </tbody>
 </table>
+</section>
+<section id="relevant-sources" class="level2">
+<h2 class="anchored" data-anchor-id="relevant-sources">Relevant Sources</h2>
+<p><span class="citation" data-cites="james2012gdp">James, Gubbins, and Murray (<a href="#ref-james2012gdp" role="doc-biblioref">2012</a>)</span> <span class="citation" data-cites="DAO2024103658">Dao et al. (<a href="#ref-DAO2024103658" role="doc-biblioref">2024</a>)</span></p>
 
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-DAO2024103658" class="csl-entry" role="listitem">
+Dao, Mai Chi, Pierre-Olivier Gourinchas, Daniel Leigh, and Prachi Mishra. 2024. <span>“Understanding the International Rise and Fall of Inflation Since 2020.”</span> <em>Journal of Monetary Economics</em> 148: 103658. https://doi.org/<a href="https://doi.org/10.1016/j.jmoneco.2024.103658">https://doi.org/10.1016/j.jmoneco.2024.103658</a>.
+</div>
 <div id="ref-james2012gdp" class="csl-entry" role="listitem">
 James, S. L., P. Gubbins, and C. J. Murray. 2012. <span>“Developing a Comprehensive Time Series of GDP Per Capita for 210 Countries from 1950 to 2015.”</span> <em>Population Health Metrics</em> 10: 12. <a href="https://doi.org/10.1186/1478-7954-10-12">https://doi.org/10.1186/1478-7954-10-12</a>.
 </div>

@@ -5,9 +5,9 @@ author: "Aanya Vusirikala"
 date: "2/25/2025"
 output:
     html:
-        some_feature: true
+        code-fold: true
     pdf:
-        some_feature: false
+        code-fold: false
 bibliography: references.bib
 
 ---
@@ -31,7 +31,7 @@ print(key_statistics.head())
 
 ```
 
-##Summary of Findings
+## Summary of Findings
 I chose to look at the three indicators inflation rate, gdp_per_capita, and exports_gdp_share by country. The mean inflation rate is 12.5, the mean gdp per capita is 20,345 and then mean exports gdp share is 46.2. The countries with the 2 highest exports gdp share are Luxmeborg and Hong Kong. The countries with the 2 highest inflation rates are Lebanon and Sudan. And the countries with the higest gdp per capita are Monaco and Liechtenstein.
 
 *Data Source: [World Development Indicators](https://github.com/danilofreire/qtm350/blob/main/assignments/wdi.csv)*
@@ -39,7 +39,8 @@ I chose to look at the three indicators inflation rate, gdp_per_capita, and expo
 
 ## Bar Chart: GDP per Capita by Country {#fig:gdp-bar-chart}  
 
-```{python, echo = false}
+```{python}
+#| echo: false
 
 import matplotlib.pyplot as plt
 plt.figure(figsize=(6,4))
@@ -54,7 +55,9 @@ plt.show()
 
 ## Scatter Plots: Inflation Rate vs. GDP per Capital, Inflation Rate vs export GDP share, GDP per capital vs export GDP share {#fig:scatters}  
 
-```{python, echo = false}
+```{python, echo: false}
+#| echo: false
+
 plt.figure(figsize=(8,5))
 plt.scatter(df['inflation_rate'], df['gdp_per_capita'], color='blue', alpha=0.7)
 plt.xlabel("Inflation Rate (%)")
